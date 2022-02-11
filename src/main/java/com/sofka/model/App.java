@@ -1,5 +1,7 @@
 package com.sofka.model;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Scanner;
 
 public class App {
@@ -80,6 +82,33 @@ public class App {
         return finalString;
     }
 
+    public String removeSpaces(String sentence){
+        String[] ar = sentence.split(" ");
+        String withoutSpaces = "";
+        for (String elem : ar) {
+            withoutSpaces += elem;
+        }
+        return withoutSpaces;
+    }
+
+    public void compareSentences(String word1, String word2){
+        if (word1.equals(word2)) {
+            System.out.println("Las palabras son iguales");
+        } else {
+            for (int i = 0; i < word1.split("").length; i++) {
+                if (!word1.split("")[i].equals(word2.split("")[i])) {
+                    System.out.println("Palabras distintas en posición " + (i + 1) + ". En palabra 1 es: '" + word1.split("")[i] + "', y en la 2 es: '" + word2.split("")[i] + "'");
+                    break;
+                }
+            }
+        }
+    }
+
+    public void actualDate(){
+        Date now = new Date();
+        SimpleDateFormat ft = new SimpleDateFormat("yyyy/MM/dd hh:mm:ss");
+        System.out.println("Fecha actual: " + ft.format(now));
+    }
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         App app = new App();
@@ -108,18 +137,23 @@ public class App {
 //        String day = in.nextLine();
 //        System.out.println(app.workingDaysCalc(day));
 
-        System.out.println(app.replaceAndCocatenate());
+//        System.out.println(app.replaceAndCocatenate());
+//        System.out.println("Ingrese frase: ");
+//        String sentence = in.nextLine();
+//        System.out.println(app.removeSpaces(sentence));
+
+//        System.out.println("Ingrese primera palabra : ");
+//        String word1 = in.nextLine();
+//        System.out.println("Ingrese segunda palabra : ");
+//        String word2 = in.nextLine();
+//        app.compareSentences(word1, word2);
+
+        app.actualDate();
 
         in.close();
     }
 }
 
-
-//        Del texto, “La sonrisa sera la mejor arma contra la tristeza' Reemplaza todas las a del String anterior por una e, adicionalmente concatenar a esta frase una adicional que ustedes quieran incluir por consola y las muestre luego unidas.
-//        Realizar una aplicación de consola, que al ingresar una frase por teclado elimine los espacios que esta contenga.
-//        Realizar la construcción de un algoritmo que permita de acuerdo a una frase pasada por consola, indicar cual es la longitud de esta frase, adicionalmente cuantas vocales tiene de “a,e,i,o,u'.
-//        Pedir dos palabras por teclado, indicar si son iguales, sino son iguales mostrar sus diferencias.
-//        Realizar un algoritmo que permita consulta la fecha y hora actual en el formato (AAAA/MM/DD) (HH:MM:SS)
 //        Crear un programa que pida un numero por teclado y que imprima por pantalla los números desde el numero introducido hasta 1000 con saldos de 2 en 2.
 //        Hacer un programa que muestre el siguiente menú de opciones
 //        ****** GESTION CINEMATOGRAFICA ********
