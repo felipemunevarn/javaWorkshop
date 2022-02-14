@@ -109,6 +109,47 @@ public class App {
         SimpleDateFormat ft = new SimpleDateFormat("yyyy/MM/dd hh:mm:ss");
         System.out.println("Fecha actual: " + ft.format(now));
     }
+
+    public void numbersToThousand(int init){
+        for (int i = init; i < 1001; i += 2) {
+            System.out.println(i);
+        }
+    }
+
+    public void menu(){
+        Scanner in = new Scanner(System.in);
+        boolean exit = true;
+        do {
+            System.out.println("****** GESTION CINEMATOGRAFICA ********\n1-NUEVO ACTOR\n2-BUSCAR ACTOR\n3-ELIMINAR ACTOR\n4-MODIFICAR ACTOR\n5-VER TODOS LOS ACTORES\n6- VER PELICULAS DE LOS ACTORES\n7-VER CATEGORIA DE LAS PELICULAS DE LOS ACTORES\n8-SALIR");
+            System.out.println("Ingrese opcion? ");
+            int option = in.nextInt();
+            switch (option){
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    break;
+                case 6:
+                    break;
+                case 7:
+                    break;
+                case 8:
+                    exit = false;
+                    break;
+                default:
+                    System.out.println("OPCION INCORRECTA");
+                    break;
+            }
+        } while(exit);
+        System.out.println("Gracias, adios!");
+        in.close();
+    }
+
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         App app = new App();
@@ -148,27 +189,23 @@ public class App {
 //        String word2 = in.nextLine();
 //        app.compareSentences(word1, word2);
 
-        app.actualDate();
+//        app.actualDate();
+
+//        System.out.println("Ingrese un numero: ");
+//        int number = in.nextInt();
+//        app.numbersToThousand(number);
+
+//        app.menu();
 
         in.close();
     }
 }
 
-//        Crear un programa que pida un numero por teclado y que imprima por pantalla los números desde el numero introducido hasta 1000 con saldos de 2 en 2.
 //        Hacer un programa que muestre el siguiente menú de opciones
-//        ****** GESTION CINEMATOGRAFICA ********
-//        1-NUEVO ACTOR
-//        2-BUSCAR ACTOR
-//        3-ELIMINAR ACTOR
-//        4-MODIFICAR ACTOR
-//        5-VER TODOS LOS ACTORES
-//        6- VER PELICULAS DE LOS ACTORES
-//
-//        7-VER CATEGORIA DE LAS PELICULAS DE LOS ACTORES
-//        8-SALIR
 //
 //
-//        EL SISTEMA SOLO VA A SALIR CUANDO SE DIGITE EL NUMERO 8, MIENTRAS SE DIGITE UNA DE LAS CINCO OPCIONES DEBE SEGUIR MOSTRADO EL MENU Y SI EL USUARIO DIGITA UN NUMERO QUE NO ESTA EN EL MENU SE DEBE ARROJAR UN MENSAJE " OPCION INCORRECTO". Y MOSTRAR EL MENU NUEVAMENTE.
+//
+//
 //        PISTA: CONVINAR SWICHT Y ALGUNO DE LOS BUCLES.
 //
 //
