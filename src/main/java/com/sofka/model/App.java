@@ -197,68 +197,49 @@ public class App {
 
 //        app.menu();
 
+        System.out.println("Nombre ? ");
+        String name = in.nextLine();
+        System.out.println("Edad ? ");
+        int age = in.nextInt();
+        in.nextLine();
+        System.out.println("Sexo (H/M) ? ");
+        String genderStr = in.nextLine();
+        char gender = genderStr.charAt(0);
+        System.out.println("Peso (kg) ? ");
+        double weight = in.nextDouble();
+        in.nextLine();
+        System.out.println("Altura (m) ? ");
+        double height = in.nextDouble();
+        in.nextLine();
+        Persona p1 = new Persona(name, age, gender, weight, height);
+        Persona p2 = new Persona(name, age, gender);
+        Persona p3 = new Persona();
+        p3.setAge(40);
+        p3.setGender('M');
+        p3.setHeight(1.71);
+        p3.setWeight(75);
+        p3.setName("Andy");
+
+        System.out.println(p1);
+        if (p1.calcularIMC() < 0) System.out.println("Esta en su peso ideal");
+        else if (p1.calcularIMC() > 0) System.out.println("Tiene sobrepeso");
+        else System.out.println("Esta por debajo de su peso ideal");
+
+        System.out.println(p2);
+        if (p2.calcularIMC() < 0) System.out.println("Esta en su peso ideal");
+        else if (p2.calcularIMC() > 0) System.out.println("Tiene sobrepeso");
+        else System.out.println("Esta por debajo de su peso ideal");
+
+        System.out.println(p3);
+        if (p3.calcularIMC() < 0) System.out.println("Esta en su peso ideal");
+        else if (p3.calcularIMC() > 0) System.out.println("Tiene sobrepeso");
+        else System.out.println("Esta por debajo de su peso ideal");
+        
         in.close();
     }
 }
 
-//        Hacer un programa que muestre el siguiente menú de opciones
-//
-//
-//
-//
-//        PISTA: CONVINAR SWICHT Y ALGUNO DE LOS BUCLES.
-//
-//
-//        Haz una clase llamada Persona que siga las siguientes condiciones:
-//
-//        Sus atributos son: nombre, edad, DNI, sexo (H hombre, M mujer), peso y altura. No queremos que se accedan directamente a ellos. Piensa que modificador de acceso es el más adecuado, también su tipo. Si quieres añadir algún atributo puedes hacerlo.
-//
-//
-//        Por defecto, todos los atributos menos el DNI serán valores por defecto según su tipo (0 números, cadena vacía para String, etc.). Sexo será hombre por defecto, usa una constante para ello.
-//
-//
-//        Se implantarán varios constructores:
-//
-//        Un constructor por defecto.
-//        Un constructor con el nombre, edad y sexo, el resto por defecto.
-//        Un constructor con todos los atributos como parámetro.
-//
-//        Los métodos que se implementaran son:
-//
-//
-//        calcularIMC(): calculara si la persona está en su peso ideal (peso en kg/(altura^2  en m)), si esta fórmula devuelve un valor menor que 20, la función devuelve un -1, si devuelve un número entre 20 y 25 (incluidos), significa que está por debajo de su peso ideal la función devuelve un 0  y si devuelve un valor mayor que 25 significa que tiene sobrepeso, la función devuelve un 1. Te recomiendo que uses constantes para devolver estos valores.
-//
-//        esMayorDeEdad(): indica si es mayor de edad, devuelve un booleano.
-//        comprobarSexo(char sexo): comprueba que el sexo introducido es correcto. Si no es correcto, sera H. No será visible al exterior.
-//        toString(): devuelve toda la información del objeto.
-//        generaDNI(): genera un número aleatorio de 8 cifras, genera a partir de este su número su letra correspondiente. Este método será invocado cuando se construya el objeto. Puedes dividir el método para que te sea más fácil. No será visible al exterior.
-//        Métodos set de cada parámetro, excepto de DNI.
-//
-//        Ahora, crea una clase ejecutable que haga lo siguiente:
-//
-//
-//        Pide por teclado el nombre, la edad, sexo, peso y altura.
-//        Crea 3 objetos de la clase anterior, el primer objeto obtendrá las anteriores variables pedidas por teclado, el segundo objeto obtendrá todos los anteriores menos el peso y la altura y el último por defecto, para este último utiliza los métodos set para darle a los atributos un valor.
-//        Para cada objeto, deberá comprobar si está en su peso ideal, tiene sobrepeso o por debajo de su peso ideal con un mensaje.
-//        Indicar para cada objeto si es mayor de edad.
-//        Por último, mostrar la información de cada objeto.
-//
-//        Crearemos una superclase llamada Electrodoméstico con las siguientes características:
-//        Sus atributos son precio base, color, consumo energético (letras entre A y F) y peso. Indican que se podrán heredar.
-//        Por defecto, el color será blanco, el consumo energético será F, el precioBase es de 100 € y el peso de 5 kg. Usa constantes para ello.
-//        Los colores disponibles son blancos, negro, rojo, azul y gris. No importa si el nombre está en mayúsculas o en minúsculas.
-//        Los constructores que se implementarán serán:
-//
-//        Un constructor por defecto.
-//        Un constructor con el precio y peso. El resto por defecto.
-//        Un constructor con todos los atributos.
-//
-//        Los métodos que implementara serán:
-//
-//        Métodos get de todos los atributos.
-//        comprobarConsumoEnergetico(char letra): comprueba que la letra es correcta, sino es correcta usara la letra por defecto. Se invocará al crear el objeto y no será visible.
-//        comprobarColor(String color): comprueba que el color es correcto, sino lo es usa el color por defecto. Se invocará al crear el objeto y no será visible.
-//        precioFinal(): según el consumo energético, aumentara su precio, y según su tamaño, también. Esta es la lista de precios:
+
 //
 //
 //
